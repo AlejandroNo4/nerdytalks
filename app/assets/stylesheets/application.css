@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.full_height {
+  height: 1000px;
+}
+
+.to_hidden {
+  width:300px;
+  visibility: hidden;
+}
