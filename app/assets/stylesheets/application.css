@@ -22,3 +22,12 @@
   width:300px;
   visibility: hidden;
 }
+
+.max-with-user-info {
+  max-width: 300px;
+}
+
+.size-img-info {
+  width: 60px;
+  height: 60px;
+}

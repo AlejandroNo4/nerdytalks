@@ -9,4 +9,10 @@ module ApplicationHelper
         (link_to 'Login', login_path, class: style)
     end
   end
+
+  def user_sidebar_info
+    if logged_in?
+      render partial:"shared/sidebar-top"
+    end
+  end
 end
