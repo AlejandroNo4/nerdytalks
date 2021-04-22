@@ -2,28 +2,16 @@
 
 <h1>Talks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render 'form', talk: @talk %>
 
-  <tbody>
-    <% @talks.each do |talk| %>
-      <tr>
-        <td><%= talk.author_id %></td>
-        <td><%= talk.text %></td>
-        <td><%= link_to 'Show', talk %></td>
-        <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
-        <td><%= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="d-flex flex-column">
+  <% @talks.each do |talk| %>
+    <span><%= author_username(talk.author_id)%></span>
+    <span><%= talk.text %></span>
+      <%if logged_in? && current_user.username == author_username(talk.author_id)%>
+        <%= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%end%>
+  <% end %>
+</div>
 
-<br>
 
-<%= link_to 'New Talk', new_talk_path %>

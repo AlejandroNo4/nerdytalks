@@ -20,12 +20,13 @@
 
   <div class="container">
     <div class="row">
-        <div class="col-12 col-md-auto border" style="background-color: #123456">
+        <div class="col-12 col-md-auto" style="background-color: #123456">
 
             <%= render partial:"shared/sidebar"%>
 
         </div>
-        <div class="col-12 col-md border">
+        <div class="col-12 col-md  container-fluid p-0">
+          <%= render partial:"shared/header"%>
           <%= yield %>
         </div>
     </div>

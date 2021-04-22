@@ -1,18 +1,6 @@
 <%= form_with(model: talk) do |form| %>
-  <% if talk.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(talk.errors.count, "error") %> prohibited this talk from being saved:</h2>
 
-      <ul>
-      <%= render 'shared/error_messages', object: form.object %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :author_id %>
-    <%= form.text_field :author_id %>
-  </div>
+  <%= render 'shared/error_messages', object: form.object %>
 
   <div class="field">
     <%= form.label :text %>

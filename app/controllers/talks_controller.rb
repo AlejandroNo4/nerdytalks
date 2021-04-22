@@ -4,6 +4,7 @@ class TalksController < ApplicationController
   # GET /talks or /talks.json
   def index
     @talks = Talk.all
+    @talk = Talk.new
   end
 
   # GET /talks/1 or /talks/1.json
@@ -21,16 +22,14 @@ class TalksController < ApplicationController
 
   # POST /talks or /talks.json
   def create
-    @talk = Talk.new(talk_params)
+    @talk = current_user.talks.build(talk_params)
 
-    respond_to do |format|
-      if @talk.save
-        format.html { redirect_to @talk, notice: "Talk was successfully created." }
-        format.json { render :show, status: :created, location: @talk }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @talk.errors, status: :unprocessable_entity }
-      end
+    if @talk.save
+      flash[:success] = 'talk created!'
+      redirect_to request.referrer
+    else
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @talk.errors, status: :unprocessable_entity }
     end
   end
 
@@ -64,6 +63,6 @@ class TalksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def talk_params
-      params.require(:talk).permit(:author_id, :text)
+      params.require(:talk).permit(:text)
     end
 end
