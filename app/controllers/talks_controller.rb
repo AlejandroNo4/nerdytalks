@@ -5,6 +5,7 @@ class TalksController < ApplicationController
   def index
     @talks = Talk.all
     @talk = Talk.new
+    @users = User.all
   end
 
   # GET /talks/1 or /talks/1.json
@@ -28,8 +29,8 @@ class TalksController < ApplicationController
       flash[:success] = 'talk created!'
       redirect_to request.referrer
     else
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @talk.errors, status: :unprocessable_entity }
+      flash[:danger] = 'A talk is between 0 and 140 characters.'
+      redirect_to request.referrer
     end
   end
 

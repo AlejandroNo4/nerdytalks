@@ -1,41 +1,49 @@
 <div class="row bg-light">
-  <div class="col-12 col-lg-8 p-0">
-    <div class="text-light p-3 bg-secondary">
-    This is the header tpart
+  <div class="col-12 col-xl-8 p-0">
+  
+    <div class="row m-0 bg-light border-bottom">
+      <div class="col-2 d-flex align-items-center h-gray-bar justify-content-center border-talks">
+        <span class="fw-bold">Talks</span>
+      </div>
     </div>
 
     <p id="notice"><%= notice %></p>
 
     <%= render 'form', talk: @talk %>
 
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column white-boxes">
+      <span class="blue-bold-text">
+        New Talks
+      </span>
+      <div class="border-top mt-3 mb-3">
+      </div>
       <% @talks.each do |talk| %>
-        <span><%= author_username(talk.author_id)%></span>
-        <span><%= talk.text %></span>
-        <span><%= destroy_talk(talk) %></span>
+
+        <div class="d-flex mt-1 mb-1 pb-1 border-bottom">
+          <div class="border size-img-info">
+            <%= author(talk.author_id).photo %>
+          </div>
+          <div class="d-flex flex-column ms-3">
+            <span><%= link_to author(talk.author_id).full_name, user_path(author(talk.author_id)), class:"author-name"%></span>
+            <span class="talk-body"><%= talk.text %></span>
+            <%
+=begin%>
+ <span><%= destroy_talk(talk) %></span> 
+<%
+=end%>
+          </div>
+        </div>
 
       <% end %>
     </div>
   </div>
 
-  <div class="col-12 col-lg-4">
-  Started GET "/" for ::1 at 2021-04-22 16:20:52 -0500
-Processing by TalksController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering talks/index.html.erb within layouts/application
-  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 206)
-  Rendered talks/_form.html.erb (Duration: 4.0ms | Allocations: 1059)
-  Talk Load (0.2ms)  SELECT "talks".* FROM "talks"
-  ↳ app/views/talks/index.html.erb:14
-  Rendered talks/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2119)
-[Webpacker] Everything's up-to-date. Nothing to do
-  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
-  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
-  Rendered shared/_sidebar-top.html.erb (Duration: 0.7ms | Allocations: 173)
-  Rendered shared/_sidebar.html.erb (Duration: 4.0ms | Allocations: 1278)
-  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 110)
-  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 7834)
-Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.3ms | Allocations: 8954)
+  <div class="col-12 col-xl-4 border-start">
+    <div class="p-3 border-bottom form-text">
+      WHO TO FOLLOW
+    </div>
+      
+
   </div>
 </div>
 

@@ -1,26 +1,21 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 .full_height {
   height: 1000px;
 }
 
-.to_hidden {
+.h-gray-bar{
+  height: 40px;
+}
+
+
+
+/* BLUE SIDEBAR */
+.to-hidden {
   width:300px;
   visibility: hidden;
+}
+
+.bg-sidebar {
+  background-color: #1A2F54;
 }
 
 .max-with-user-info {
@@ -28,13 +23,66 @@
 }
 
 .size-img-info {
-  width: 60px;
+  min-width: 60px;
   height: 60px;
 }
 
-.input-talk {
-  height: 100px;
+/* TOP NAVBAR */
+
+.bg-blue {
+  background-color: #1DA1F2;
+}
+
+/* TALK INDEX FORM AND TALK BOXES */
+
+.white-boxes {
   padding: 10px 20px 10px 20px;
-  margin: 20px;
   background: white;
+  margin: 20px;
+}
+
+.input-talk-height {
+  height: 100px;
+}
+
+.author-name {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.author-name:hover {
+  color: #1DA1F2;
+}
+
+.talk-body {
+  font-size: 0.8em;
+}
+
+.blue-bold-text {
+  color: #1DA1F2;
+}
+
+/* USER PAGE */
+.img-right-bio{
+  height: 100px;
+  width: 100px;
+}
+
+.author-name-static {
+  font-weight: bold;
+  color: black;
+}
+
+.gray-text-userpage {
+  color: gray;
+  font-size: 0.7em;
+}
+
+.cover-image {
+  height: 200px;
+}
+
+.border-talks {
+border-bottom: 5px solid #1DA1F2;
 }

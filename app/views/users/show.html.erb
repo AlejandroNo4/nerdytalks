@@ -1,24 +1,87 @@
-<p id="notice"><%= notice %></p>
+<div class="row bg-light">
+  <div class="col-12 col-xl-8 p-0">
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <div class="row m-0 bg-light border-bottom">
+      <div class="col-2 d-flex align-items-center h-gray-bar justify-content-center border-talks">
+        <span class="fw-bold">Talks</span>
+      </div>
+    </div>
 
-<p>
-  <strong>Full name:</strong>
-  <%= @user.full_name %>
-</p>
+    <div class="cover-image">
+      This is the cover image part
+    </div>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @user.photo %>
-</p>
+    <div class="d-flex flex-column white-boxes">
+      <span class="blue-bold-text">
+        New Talks
+      </span>
+      <div class="border-top mt-3 mb-3">
+      </div>
+      <% @user.talks.each do |talk| %>
 
-<p>
-  <strong>Cover image:</strong>
-  <%= @user.cover_image %>
-</p>
+        <div class="d-flex mt-1 mb-1 pb-1 border-bottom">
+          <div class="border size-img-info">
+            <%= @user.photo %>
+          </div>
+          <div class="d-flex flex-column ms-3">
+            <span class="author-name-static"><%= @user.full_name%></span>
+            <span class="talk-body"><%= talk.text %></span>
+            <%
+=begin%>
+ <span><%= destroy_talk(talk) %></span> 
+<%
+=end%>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-12 col-xl-4 border-start">
+    <div class="p-3 d-flex flex-column align-items-center">
+      <div class="rounded-circle border text-center img-right-bio">
+        <%= @user.photo %>
+      </div>
+      <span class="author-name-static mt-2">
+        <%= @user.full_name.upcase %>
+      </span>
+      <span class="gray-text-userpage">
+        @<%= @user.username %>
+      </span>
+    </div>
+    <div class="d-flex border-top border-bottom justify-content-around">
+      <div class="d-flex flex-column align-items-center">
+        <span>
+          <%= @user.talks.count %>
+        </span>
+        <span class="gray-text-userpage">
+          Talks
+        </span>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <span>
+          898
+        </span>
+        <span class="gray-text-userpage">
+          Followers
+        </span>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <span>
+          898
+        </span>
+        <span class="gray-text-userpage">
+          Following
+        </span>
+      </div>  
+    </div>
+    <div class="p-3 border-bottom form-text">
+      FOLLOWED BY
+    </div>  
+
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
