@@ -1,17 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="row bg-light">
+  <div class="col-12 col-lg-8 p-0">
+    <div class="text-light p-3 bg-secondary">
+    This is the header tpart
+    </div>
 
-<h1>Talks</h1>
+    <p id="notice"><%= notice %></p>
 
-<%= render 'form', talk: @talk %>
+    <%= render 'form', talk: @talk %>
 
-<div class="d-flex flex-column">
-  <% @talks.each do |talk| %>
-    <span><%= author_username(talk.author_id)%></span>
-    <span><%= talk.text %></span>
-      <%if logged_in? && current_user.username == author_username(talk.author_id)%>
-        <%= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%end%>
-  <% end %>
+    <div class="d-flex flex-column">
+      <% @talks.each do |talk| %>
+        <span><%= author_username(talk.author_id)%></span>
+        <span><%= talk.text %></span>
+        <span><%= destroy_talk(talk) %></span>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-4">
+  Started GET "/" for ::1 at 2021-04-22 16:20:52 -0500
+Processing by TalksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering talks/index.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 206)
+  Rendered talks/_form.html.erb (Duration: 4.0ms | Allocations: 1059)
+  Talk Load (0.2ms)  SELECT "talks".* FROM "talks"
+  ↳ app/views/talks/index.html.erb:14
+  Rendered talks/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2119)
+[Webpacker] Everything's up-to-date. Nothing to do
+  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered shared/_sidebar-top.html.erb (Duration: 0.7ms | Allocations: 173)
+  Rendered shared/_sidebar.html.erb (Duration: 4.0ms | Allocations: 1278)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 7834)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.3ms | Allocations: 8954)
+  </div>
 </div>
-
 
