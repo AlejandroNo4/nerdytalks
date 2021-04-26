@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, length: { maximum: 25}
 
+  has_one_attached :photo
+  has_one_attached :cover_image
   def followeds_id
     followeds.map {|f| f.follower_id}.compact
   end

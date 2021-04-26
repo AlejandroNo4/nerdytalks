@@ -7,8 +7,8 @@
       </div>
     </div>
 
-    <div class="cover-image">
-      This is the cover image part
+    <div>
+      <img src="<%=(url_for(@user.cover_image))%>", class="img-fluid w-100 cover-image">
     </div>
 
     <div class="d-flex flex-column white-boxes">
@@ -20,8 +20,8 @@
       <% @user.talks.each do |talk| %>
 
         <div class="d-flex mt-1 mb-1 pb-1 border-bottom">
-          <div class="border size-img-info">
-            <%= @user.photo %>
+          <div>
+            <img src="<%=(url_for(@user.photo))%>", class="border size-img-info">
           </div>
           <div class="d-flex flex-column ms-3">
             <span class="author-name-static"><%= @user.full_name%></span>
@@ -40,8 +40,8 @@
 
   <div class="col-12 col-xl-4 border-start">
     <div class="p-3 d-flex flex-column align-items-center">
-      <div class="rounded-circle border text-center img-right-bio">
-        <%= @user.photo %>
+      <div>
+        <img src="<%=(url_for(@user.photo))%>", class="rounded-circle border img-right-bio">
       </div>
       <span class="author-name-static mt-2">
         <%= @user.full_name.upcase %>
@@ -85,8 +85,8 @@
       <% @user.followers_id.each do |f_id| %>
 
         <div class="d-flex pt-2 pb-2 border-bottom">
-          <div class="rounded-circle border text-center mini-img-right-bio">
-            <%= find_user(f_id).photo %>
+          <div>
+            <img src="<%=(url_for(find_user(f_id).photo))%>", class="rounded-circle border mini-img-right-bio">
           </div>
           <div class="d-flex flex-column ms-2">
             <span>
@@ -100,7 +100,5 @@
 
       <% end %>
   </div>
+  <%= link_to 'Edit profile', edit_user_path(@user) %> 
 </div>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

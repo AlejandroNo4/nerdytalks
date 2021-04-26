@@ -6,6 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-2.times do |i|
-  User.create!(username:"user#{i + 1}", full_name:"name#{i + 1}", photo:"img#{i + 1}", cover_image:"img#{i + 1}")
-end

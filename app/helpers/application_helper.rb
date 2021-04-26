@@ -31,6 +31,10 @@ module ApplicationHelper
   end
 
   def who_to_follow_list
-    User.all.select {|u| u != current_user && !current_user.followed?(u)}
+    if current_user
+      User.all.select {|u| u != current_user && !current_user.followed?(u)}.compact
+    else
+      User.all
+    end
   end
 end
