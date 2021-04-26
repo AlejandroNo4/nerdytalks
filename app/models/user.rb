@@ -5,4 +5,17 @@ class User < ApplicationRecord
   has_many :followeds, foreign_key: 'followed_id', class_name: 'Following'
 
   validates :username, presence: true, length: { maximum: 25}
+
+  def followeds_id
+    followeds.map {|f| f.follower_id}.compact
+  end
+
+  def followers_id
+    followers.map {|f| f.followed_id}.compact
+  end
+  
+  def followed?(user)
+    followeds_id.include?(user.id)
+  end
 end
+

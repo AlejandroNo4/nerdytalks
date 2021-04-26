@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :followings
   resources :talks
   resources :users
+
+  get "follow_user", to: "followings#create"
+  get "unfollow_user", to: "followings#destroy"
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

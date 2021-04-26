@@ -1,0 +1,15 @@
+<% @users.each do |user| %>
+    <div class="d-flex pt-2 pb-2 border-bottom">
+      <div class="rounded-circle border text-center mini-img-right-bio">
+        <%= user.photo %>
+      </div>
+      <div class="d-flex flex-column ms-2">
+        <span>
+          <%= link_to user.full_name, user_path(user.id), class: "author-name" %>
+        </span>
+        <span class="gray-text-userpage">
+          @<%= user.username  %>
+        </span>
+      </div>
+    </div>
+<% end %>

@@ -69,6 +69,11 @@
   width: 100px;
 }
 
+.mini-img-right-bio {
+  height: 50px;
+  width: 50px;
+}
+
 .author-name-static {
   font-weight: bold;
   color: black;

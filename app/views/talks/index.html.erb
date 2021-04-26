@@ -1,6 +1,6 @@
 <div class="row bg-light">
   <div class="col-12 col-xl-8 p-0">
-  
+
     <div class="row m-0 bg-light border-bottom">
       <div class="col-2 d-flex align-items-center h-gray-bar justify-content-center border-talks">
         <span class="fw-bold">Talks</span>
@@ -21,10 +21,10 @@
 
         <div class="d-flex mt-1 mb-1 pb-1 border-bottom">
           <div class="border size-img-info">
-            <%= author(talk.author_id).photo %>
+            <%= find_user(talk.author_id).photo %>
           </div>
           <div class="d-flex flex-column ms-3">
-            <span><%= link_to author(talk.author_id).full_name, user_path(author(talk.author_id)), class:"author-name"%></span>
+            <span><%= link_to find_user(talk.author_id).full_name, user_path(find_user(talk.author_id)), class:"author-name"%></span>
             <span class="talk-body"><%= talk.text %></span>
             <%
 =begin%>
@@ -42,8 +42,24 @@
     <div class="p-3 border-bottom form-text">
       WHO TO FOLLOW
     </div>
-      
 
+      <div>
+        <% who_to_follow_list.each do |user| %>
+          <div class="d-flex pt-2 pb-2 border-bottom">
+            <div class="rounded-circle border text-center mini-img-right-bio">
+              <%= user.photo %>
+            </div>
+            <div class="d-flex flex-column ms-2">
+              <span>
+                <%= link_to user.full_name, user_path(user.id), class: "author-name" %>
+              </span>
+              <span class="gray-text-userpage">
+                @<%= user.username  %>
+              </span>
+            </div>
+          </div>
+        <% end %>
+      </div>
   </div>
 </div>
 
