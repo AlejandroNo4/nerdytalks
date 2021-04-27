@@ -1,4 +1,4 @@
-<div class="row bg-light">
+<div class="row bg-light height-100">
   <div class="col-12 col-xl-8 p-0">
 
     <div class="row m-0 bg-light border-bottom">
@@ -26,11 +26,10 @@
           <div class="d-flex flex-column ms-3">
             <span class="author-name-static"><%= @user.full_name%></span>
             <span class="talk-body"><%= talk.text %></span>
-            <%
-=begin%>
- <span><%= destroy_talk(talk) %></span> 
-<%
-=end%>
+
+
+            <span><%= destroy_talk(talk) %></span> 
+
           </div>
         </div>
 
@@ -38,7 +37,7 @@
     </div>
   </div>
 
-  <div class="col-12 col-xl-4 border-start">
+  <div class="col-12 col-xl-4 gray-border">
     <div class="p-3 d-flex flex-column align-items-center">
       <div>
         <img src="<%=(url_for(@user.photo))%>", class="rounded-circle border img-right-bio">
@@ -99,6 +98,7 @@
         </div> 
 
       <% end %>
+
   </div>
-  <%= link_to 'Edit profile', edit_user_path(@user) %> 
+
 </div>

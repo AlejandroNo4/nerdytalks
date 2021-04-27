@@ -1,27 +1,13 @@
 class TalksController < ApplicationController
   before_action :set_talk, only: %i[ show edit update destroy ]
+  before_action :logged_in_user, only: [:create]
 
-  # GET /talks or /talks.json
   def index
     @talks = Talk.all
     @talk = Talk.new
     @users = User.all
   end
 
-  # GET /talks/1 or /talks/1.json
-  def show
-  end
-
-  # GET /talks/new
-  def new
-    @talk = Talk.new
-  end
-
-  # GET /talks/1/edit
-  def edit
-  end
-
-  # POST /talks or /talks.json
   def create
     @talk = current_user.talks.build(talk_params)
 
@@ -29,41 +15,31 @@ class TalksController < ApplicationController
       flash[:success] = 'talk created!'
       redirect_to request.referrer
     else
-      flash[:danger] = 'A talk is between 0 and 140 characters.'
+      flash[:danger] = 'A talk must to be between 0 and 140 characters.'
       redirect_to request.referrer
     end
   end
 
-  # PATCH/PUT /talks/1 or /talks/1.json
-  def update
-    respond_to do |format|
-      if @talk.update(talk_params)
-        format.html { redirect_to @talk, notice: "Talk was successfully updated." }
-        format.json { render :show, status: :ok, location: @talk }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @talk.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /talks/1 or /talks/1.json
   def destroy
     @talk.destroy
-    respond_to do |format|
-      format.html { redirect_to talks_url, notice: "Talk was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'succesfully destroyed!'
+    redirect_to request.referrer
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_talk
       @talk = Talk.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def talk_params
       params.require(:talk).permit(:text)
+    end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in or sign up!"
+        redirect_to login_url
+      end
     end
 end

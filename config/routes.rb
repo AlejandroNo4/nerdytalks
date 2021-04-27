@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :talks
-  resources :users
+  resources :talks, only: [:index, :create, :destroy]
+  resources :users, only: [:show, :new, :edit, :update, :create, :destroy]
 
   get "follow_user", to: "followings#create"
   get "unfollow_user", to: "followings#destroy"

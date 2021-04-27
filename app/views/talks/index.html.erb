@@ -1,5 +1,5 @@
-<div class="row bg-light">
-  <div class="col-12 col-xl-8 p-0">
+<div class="row bg-light height-100 ">
+  <div class="col-12 col-xl-8 p-0 ">
 
     <div class="row m-0 bg-light border-bottom">
       <div class="col-2 d-flex align-items-center h-gray-bar justify-content-center border-talks">
@@ -26,11 +26,6 @@
           <div class="d-flex flex-column ms-3">
             <span><%= link_to find_user(talk.author_id).full_name, user_path(find_user(talk.author_id)), class:"author-name"%></span>
             <span class="talk-body"><%= talk.text %></span>
-            <%
-=begin%>
- <span><%= destroy_talk(talk) %></span> 
-<%
-=end%>
           </div>
         </div>
 
@@ -38,7 +33,9 @@
     </div>
   </div>
 
-  <div class="col-12 col-xl-4 border-start">
+
+
+  <div class="col-12 col-xl-4 gray-border">
     <div class="p-3 border-bottom form-text">
       WHO TO FOLLOW
     </div>

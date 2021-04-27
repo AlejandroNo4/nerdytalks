@@ -12,21 +12,24 @@
   </head>
 
   <body>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>">
-        <%= message %>
-      </div>
-    <% end %>
 
-  <div class="container">
+
+  <div class="container bg-light">
     <div class="row">
         <div class="col-12 col-md-auto bg-sidebar">
 
             <%= render partial:"shared/sidebar"%>
 
         </div>
-        <div class="col-12 col-md  container-fluid">
+        <div class="col-12 col-md container-fluid ">
           <%= render partial:"shared/header"%>
+
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>">
+              <%= message %>
+            </div>
+          <% end %>
+
           <%= yield %>
         </div>
     </div>
