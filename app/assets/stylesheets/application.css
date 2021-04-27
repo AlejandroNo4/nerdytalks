@@ -1,9 +1,10 @@
-html, body {
-  margin:0px;
-  height:100%;
+html,
+body {
+  margin: 0;
+  height: 100%;
 }
 
-.h-gray-bar{
+.h-gray-bar {
   height: 40px;
 }
 
@@ -13,12 +14,12 @@ html, body {
 
 /* BLUE SIDEBAR */
 .to-hidden {
-  width:300px;
+  width: 300px;
   visibility: hidden;
 }
 
 .bg-sidebar {
-  background-color: #1A2F54;
+  background-color: #1a2f54;
 }
 
 .max-with-user-info {
@@ -33,7 +34,7 @@ html, body {
 /* TOP NAVBAR */
 
 .bg-blue {
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
 }
 
 /* TALK INDEX FORM AND TALK BOXES */
@@ -55,7 +56,7 @@ html, body {
 }
 
 .author-name:hover {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 .talk-body {
@@ -63,11 +64,11 @@ html, body {
 }
 
 .blue-bold-text {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 /* USER PAGE */
-.img-right-bio{
+.img-right-bio {
   height: 100px;
   width: 100px;
 }
@@ -92,7 +93,7 @@ html, body {
 }
 
 .border-talks {
-border-bottom: 5px solid #1DA1F2;
+  border-bottom: 5px solid #1da1f2;
 }
 
 @media only screen and (min-width: 1140px) {
