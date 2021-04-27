@@ -2,10 +2,10 @@ class FollowingsController < ApplicationController
   def create
     @follow = current_user.followeds.build(follower_id: params[:follower_id])
     flash[:success] = if @follow.save
-                       'you are following to this user'
-                     else
-                       'Unable to follow.'
-                     end
+                        'you are following to this user'
+                      else
+                        'Unable to follow.'
+                      end
     redirect_to request.referrer
   end
 
@@ -16,4 +16,3 @@ class FollowingsController < ApplicationController
     redirect_to request.referrer
   end
 end
-

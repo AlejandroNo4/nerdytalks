@@ -1,5 +1,5 @@
 class TalksController < ApplicationController
-  before_action :set_talk, only: %i[ show edit update destroy ]
+  before_action :set_talk, only: %i[show edit update destroy]
   before_action :logged_in_user, only: [:create]
 
   def index
@@ -13,11 +13,10 @@ class TalksController < ApplicationController
 
     if @talk.save
       flash[:success] = 'talk created!'
-      redirect_to request.referrer
     else
       flash[:danger] = 'A talk must to be between 0 and 140 characters.'
-      redirect_to request.referrer
     end
+    redirect_to request.referrer
   end
 
   def destroy
@@ -28,18 +27,18 @@ class TalksController < ApplicationController
 
   private
 
-    def set_talk
-      @talk = Talk.find(params[:id])
-    end
+  def set_talk
+    @talk = Talk.find(params[:id])
+  end
 
-    def talk_params
-      params.require(:talk).permit(:text)
-    end
+  def talk_params
+    params.require(:talk).permit(:text)
+  end
 
-    def logged_in_user
-      unless logged_in?
-        flash[:danger] = "Please log in or sign up!"
-        redirect_to login_url
-      end
-    end
+  def logged_in_user
+    return if logged_in?
+
+    flash[:danger] = 'Please log in or sign up!'
+    redirect_to login_url
+  end
 end

@@ -11,19 +11,17 @@ module ApplicationHelper
   end
 
   def user_sidebar_info
-    if logged_in?
-      render partial:"shared/sidebar-top"
-    end
+    render partial: 'shared/sidebar-top' if logged_in?
   end
 
   def button_follow_unfollow(user)
-    unless current_user == user 
-      if current_user.followed?(user) 
-        link_to 'Unfollow', unfollow_user_path(follower_id: user.id), class: 'btn btn-primary' 
-      else 
-        link_to 'Follow', follow_user_path(follower_id: user.id), class: 'btn btn-primary' 
-      end 
-    end 
+    return if current_user == user
+
+    if current_user.followed?(user)
+      link_to 'Unfollow', unfollow_user_path(follower_id: user.id), class: 'btn btn-primary'
+    else
+      link_to 'Follow', follow_user_path(follower_id: user.id), class: 'btn btn-primary'
+    end
   end
 
   def find_user(u_id)
@@ -32,7 +30,7 @@ module ApplicationHelper
 
   def who_to_follow_list
     if current_user
-      User.all.select {|u| u != current_user && !current_user.followed?(u)}.compact
+      User.all.select { |u| u != current_user && !current_user.followed?(u) }.compact
     else
       User.all
     end
