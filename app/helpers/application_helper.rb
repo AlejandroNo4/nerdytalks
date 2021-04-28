@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def find_user(u_id)
-    @user = User.find_by(id: u_id)
+    @usr = User.find_by(id: u_id)
   end
 
   def who_to_follow_list
@@ -33,6 +33,12 @@ module ApplicationHelper
       User.all.select { |u| u != current_user && !current_user.followed?(u) }.compact
     else
       User.all
+    end
+  end
+
+  def show_username_if_logged(user)
+    if logged_in?
+      "@" + user.username
     end
   end
 end

@@ -51,7 +51,7 @@
                 <%= link_to user.full_name, user_path(user.id), class: "author-name" %>
               </span>
               <span class="gray-text-userpage">
-                @<%= user.username  %>
+                <%= show_username_if_logged(user) %>
               </span>
             </div>
           </div>

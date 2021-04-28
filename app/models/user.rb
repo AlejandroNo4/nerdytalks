@@ -13,11 +13,11 @@ class User < ApplicationRecord
   has_one_attached :cover_image, dependent: :destroy
 
   def followeds_id
-    followeds.map(&:follower_id).compact
+    followeds.map { |f| f.follower_id }.compact
   end
 
   def followers_id
-    followers.map(&:followed_id).compact
+    followers.map { |f| f.followed_id }.compact
   end
 
   def followed?(user)
