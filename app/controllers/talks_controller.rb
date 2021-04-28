@@ -12,7 +12,7 @@ class TalksController < ApplicationController
     @talk = current_user.talks.build(talk_params)
 
     if @talk.save
-      flash[:success] = 'talk created!'
+      flash[:success] = 'Talk created!'
     else
       flash[:danger] = 'A talk must to be between 0 and 140 characters.'
     end
