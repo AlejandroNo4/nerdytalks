@@ -37,8 +37,6 @@ module ApplicationHelper
   end
 
   def show_username_if_logged(user)
-    if logged_in?
-      "@" + user.username
-    end
+    "@#{user.username}" if logged_in?
   end
 end

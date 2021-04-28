@@ -10,6 +10,6 @@ RSpec.describe Talk, type: :model do
   context 'Validations' do
     it { should validate_length_of(:text).is_at_most(140) }
     it { should validate_presence_of(:text) }
-    it { is_expected.to allow_value("a valid text").for(:text) }
+    it { is_expected.to allow_value('a valid text').for(:text) }
   end
 end

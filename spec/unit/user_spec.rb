@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:photo) }
     it { should validate_presence_of(:cover_image) }
     it { should validate_uniqueness_of(:username) }
-    it { is_expected.to allow_value("aval1dname").for(:username) }
-    it { is_expected.to_not allow_value("invalid name").for(:username) }
+    it { is_expected.to allow_value('aval1dname').for(:username) }
+    it { is_expected.to_not allow_value('invalid name').for(:username) }
   end
 end

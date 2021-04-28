@@ -47,7 +47,7 @@ RSpec.configure do |config|
 end
 
 # This block configures Caypbara's driver to use Selenium
-# It makes it use the chrome browser, but can also be configured to user Firefox, etc. 
+# It makes it use the chrome browser, but can also be configured to user Firefox, etc.
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
@@ -55,7 +55,7 @@ end
 Capybara.javascript_driver = :webkit
 
 Capybara.configure do |config|
-  config.default_max_wait_time = 10 #seconds
+  config.default_max_wait_time = 10 # seconds
   config.default_driver = :selenium
   # config.always_include_port = true
 end

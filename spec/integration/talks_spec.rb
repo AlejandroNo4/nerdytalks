@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Talks >', type: :feature do
-  let(:user_a) { User.new(username: 'Pablito', full_name: 'Pablito Pants', photo: Rack::Test::UploadedFile.new('spec/support/photo_test.jpeg', "image/jpeg"), cover_image: Rack::Test::UploadedFile.new('spec/support/cov.jpeg', "image/jpeg") ) }
+  let(:user_a) do
+    User.new(username: 'Pablito', full_name: 'Pablito Pants',
+             photo: Rack::Test::UploadedFile.new('spec/support/photo_test.jpeg', 'image/jpeg'),
+             cover_image: Rack::Test::UploadedFile.new('spec/support/cov.jpeg', 'image/jpeg'))
+  end
 
   def sign_up(user)
     visit new_user_path
@@ -28,7 +32,4 @@ RSpec.describe 'Talks >', type: :feature do
       expect(page).not_to have_content('text')
     end
   end
-
-
-
 end

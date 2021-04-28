@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-
     if @user.save
       log_in(@user)
       flash[:success] = 'Successfully created!'
@@ -23,7 +22,6 @@ class UsersController < ApplicationController
       flash.now[:danger] = 'Unable to create this user'
       render 'new'
     end
-
   end
 
   def update
