@@ -1,0 +1,40 @@
+<div class= "bg-light p-3 mt-4 height-100">
+  <%= form_with(model: user) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :username, class: "form-label" %>
+      <%= form.text_field :username, class: "form-control" %>
+      <span class="form-text">The username must to be with letters and/or numbers without space. Max 25 characteres.</span>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :full_name, class: "form-label"%>
+      <%= form.text_field :full_name, class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :photo, class: "form-label"%>
+      <%= form.file_field :photo, class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :cover_image, class: "form-label"%>
+      <%= form.file_field :cover_image, class: "form-control"%>
+    </div>
+
+    <div >
+      <%= form.submit class:"btn btn-primary"%>
+    </div>
+  <% end %>
+</div>

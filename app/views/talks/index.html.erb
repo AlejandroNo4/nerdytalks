@@ -1,0 +1,62 @@
+<div class="row bg-light height-100 ">
+  <div class="col-12 col-xl-8 p-0 ">
+
+    <div class="row m-0 bg-light border-bottom">
+      <div class="col-2 d-flex align-items-center h-gray-bar justify-content-center border-talks">
+        <span class="fw-bold">Talks</span>
+      </div>
+    </div>
+
+    <p id="notice"><%= notice %></p>
+
+    <%= render 'form', talk: @talk %>
+
+    <div class="d-flex flex-column white-boxes">
+      <span class="blue-bold-text">
+        New Talks
+      </span>
+      <div class="border-top mt-3 mb-3">
+      </div>
+      <% @talks.each do |talk| %>
+
+        <div class="d-flex mt-1 mb-1 pb-1 border-bottom">
+          <div>
+            <img src="<%=(url_for(find_user(talk.author_id).photo))%>", class="border size-img-info">
+          </div>
+          <div class="d-flex flex-column ms-3">
+            <span><%= link_to find_user(talk.author_id).full_name, user_path(find_user(talk.author_id)), class:"author-name"%></span>
+            <span class="talk-body"><%= talk.text %></span>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+
+
+
+  <div class="col-12 col-xl-4 gray-border">
+    <div class="p-3 border-bottom form-text">
+      WHO TO FOLLOW
+    </div>
+
+      <div>
+        <% who_to_follow_list.each do |user| %>
+          <div class="d-flex pt-2 pb-2 border-bottom">
+            <div>
+              <img src="<%=(url_for(user.photo))%>", class="rounded-circle border mini-img-right-bio">
+            </div>
+            <div class="d-flex flex-column ms-2">
+              <span>
+                <%= link_to user.full_name, user_path(user.id), class: "author-name" %>
+              </span>
+              <span class="gray-text-userpage">
+                <%= show_username_if_logged(user) %>
+              </span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
