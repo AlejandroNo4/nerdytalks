@@ -1,24 +1,111 @@
-# README
+# Nerdy Talks 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a rails app created as the RoR capstone for the Microverse’s main curriculum.
 
-Things you may want to cover:
+I made this project for learning proposes, to implement all the learned skills during the RoR course. It is a “clone” of Twitter, but with basic functions.
 
-* Ruby version
+Instead of Twitter, I called it “Nerdy Talks”. A space where everybody can share ideas, or in this case “talks” about what we all love. Nerdy stuff.
 
-* System dependencies
+Go ahead. Try it by yourself!
+<br/>
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby v2.7.0
+- Ruby on Rails v6.1.3
+<br/>
 
-* Database initialization
+## Live Demo
 
-* How to run the test suite
+[Live Demo](https://herokuapp.com/)
+<br/>
 
-* Services (job queues, cache servers, search engines, etc.)
+## Getting Started
 
-* Deployment instructions
+To get a local copy up and running follow these simple example steps.
+<br/>
 
-* ...
+### Prerequisites
+
+- Ruby: 2.7.0
+- Rails: 6.1.3
+- Postgres: >=9.5
+<br/>
+
+### Setup
+
+- Instal gems with:
+
+```
+bundle install
+```
+
+- Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+<br/>
+
+### Usage
+
+- Start server with:
+
+```
+    rails server
+```
+
+- Open `http://localhost:3000/` in your browser.
+
+- Create an account, and it will redirect you to the home page.
+
+- Start talking about something.
+
+- You can go to your profile and see in the center all your "talks." You can delete them. At the right column, you will see your stats, as well as who is following you.
+
+- You can click on a user’s name to see their profile. You’ll notice that is the same as yours, but you can’t delete the “talks.”
+<br/>
+
+### Run tests
+
+- On your terminal, run:
+
+```
+    rpsec --format documentation
+```
+<br/>
+
+### Deployment
+
+The project was deployed in Heroku. Feel free to check the live demo.
+<br/>
+
+## Author
+
+👤 **Alejandro Guadalupe Contreras Rodriguez**
+
+- GitHub: [@AlejandroNo4](https://github.com/AlejandroNo4)
+- Twitter: [@Alejand80002666](https://twitter.com/alejand80002666)
+- LinkedIn: [Alejandro Contreras Rodriguez](https://www.linkedin.com/in/alejandro-contreras-rodriguez-b524821b5/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/AlejandroNo4/nerdytalks/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+Project layout based on:
+
+[- Gregoire Vella's Twitter - Redesign of UI details](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+
+For a better understanding, I followed this tutorial from Codemy.com.
+
+[- Friends App. ROR](https://www.youtube.com/watch?v=iF8caVyDi5g&list=PLCC34OHNcOtrk3BDsfZwf4GattdLoKCOF)
+

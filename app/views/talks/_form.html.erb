@@ -1,0 +1,10 @@
+<%= form_with(model: talk) do |form| %>
+
+  <%= render 'shared/error_messages', object: form.object %>
+
+  <div class="field input-talk-height white-boxes">
+
+    <label for="talk_text" class="form-text">TALK ABOUT SOMETHING</label>
+    <%= form.text_field :text, class:"form-control mt-2" %>
+  </div>
+<% end %>

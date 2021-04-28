@@ -1,0 +1,27 @@
+<div class="text-light d-flex m-2 mt-3 max-with-user-info align-items-center">
+  <div>
+      <img src="<%=(url_for(current_user.photo))%>", class="size-img-info">
+  </div>
+  <span class="ms-3">
+    <%= current_user.full_name %>
+  </span>
+</div>
+
+<div class="row row-cols-2 text-center text-light mt-4 mb-4">
+  <div class="d-flex flex-column">
+    <span>
+      <%= current_user.followeds.count %>
+    </span>
+    <span>
+      following
+    </span>
+  </div>
+  <div class="d-flex flex-column">
+    <span>
+      <%= current_user.followers.count %>
+    </span>
+    <span>
+      followers
+    </span>
+  </div>
+</div>
