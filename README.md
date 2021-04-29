@@ -4,7 +4,7 @@
 
 I made this project for learning proposes, to implement all the learned skills during the RoR course. It is a “clone” of Twitter, but with basic functions.
 
-Instead of Twitter, I called it “Nerdy Talks”. A space where everybody can share ideas, or in this case “talks” about what we all love. Nerdy stuff.
+Instead of Twitter, I called it “Nerdy Talks”. Space where everybody can share ideas, or in this case “talks” about what we all love. Nerdy stuff.
 
 Go ahead. Try it by yourself!
 <br/>
@@ -50,7 +50,7 @@ bundle install
 
 ### Usage
 
-- Start server with:
+- Start the server with:
 
 ```
     rails server
@@ -72,7 +72,7 @@ bundle install
 - On your terminal, run:
 
 ```
-    rpsec --format documentation
+    RSpec --format documentation
 ```
 <br/>
 
@@ -91,7 +91,7 @@ The project was deployed in Heroku. Feel free to check the live demo.
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/AlejandroNo4/nerdytalks/issues).
 
