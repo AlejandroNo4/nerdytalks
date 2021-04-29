@@ -17,7 +17,7 @@ Go ahead. Try it by yourself!
 
 ## Live Demo
 
-[Live Demo](https://herokuapp.com/)
+[Live Demo](https://nerdytalks.herokuapp.com/)
 <br/>
 
 ## Getting Started
