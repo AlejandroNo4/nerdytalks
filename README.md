@@ -62,7 +62,7 @@ bundle install
 
 - Start talking about something.
 
-- You can go to your profile and see in the center all your "talks." You can delete them. At the right column, you will see your stats, as well as who is following you.
+- You can go to your profile and see in the center all your "talks." You can delete them. In the right column, you will see your stats, as well as who is following you.
 
 - You can click on a user’s name to see their profile. You’ll notice that is the same as yours, but you can’t delete the “talks.”
 <br/>
