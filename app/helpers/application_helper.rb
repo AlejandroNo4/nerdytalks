@@ -39,4 +39,12 @@ module ApplicationHelper
   def show_username_if_logged(user)
     "@#{user.username}" if logged_in?
   end
+
+  def errors_helper(form)
+    @object = form.object
+    return unless @object.errors.any?
+
+    @object.errors.any?
+    render 'shared/error_messages', object: form.object
+  end
 end
