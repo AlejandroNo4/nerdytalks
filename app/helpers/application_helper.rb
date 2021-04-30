@@ -42,8 +42,9 @@ module ApplicationHelper
 
   def errors_helper(form)
     @object = form.object
-    if @object.errors.any?
-      render 'shared/error_messages', object: form.object
-    end
+    return unless @object.errors.any?
+
+    @object.errors.any?
+    render 'shared/error_messages', object: form.object
   end
 end
