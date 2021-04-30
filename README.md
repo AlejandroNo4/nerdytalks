@@ -11,13 +11,13 @@ Go ahead. Try it by yourself!
 
 ## Built With
 
-- Ruby v2.7.0
+- Ruby v2.7.2
 - Ruby on Rails v6.1.3
 <br/>
 
 ## Live Demo
 
-[Live Demo](https://herokuapp.com/)
+[Live Demo](https://nerdytalks.herokuapp.com/)
 <br/>
 
 ## Getting Started
@@ -27,7 +27,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-- Ruby: 2.7.0
+- Ruby: 2.7.2
 - Rails: 6.1.3
 - Postgres: >=9.5
 <br/>
@@ -72,7 +72,7 @@ bundle install
 - On your terminal, run:
 
 ```
-    rpsec --format documentation
+    RSpec --format documentation
 ```
 <br/>
 

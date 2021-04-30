@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.2'
 
 gem 'jbuilder', '~> 2.7'
+gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 gem 'sass-rails', '>= 6'
@@ -27,7 +28,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pg'
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
