@@ -1,6 +1,6 @@
 <%= form_with(model: talk) do |form| %>
 
-  <%= render 'shared/error_messages', object: form.object %>
+  <%= errors_helper(form) %>
 
   <div class="field input-talk-height white-boxes">
 

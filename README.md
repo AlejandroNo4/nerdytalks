@@ -4,7 +4,7 @@
 
 I made this project for learning proposes, to implement all the learned skills during the RoR course. It is a “clone” of Twitter, but with basic functions.
 
-Instead of Twitter, I called it “Nerdy Talks”. A space where everybody can share ideas, or in this case “talks” about what we all love. Nerdy stuff.
+Instead of Twitter, I called it “Nerdy Talks”. Space where everybody can share ideas, or in this case “talks” about what we all love. Nerdy stuff.
 
 Go ahead. Try it by yourself!
 <br/>
@@ -50,7 +50,7 @@ bundle install
 
 ### Usage
 
-- Start server with:
+- Start the server with:
 
 ```
     rails server
@@ -62,7 +62,7 @@ bundle install
 
 - Start talking about something.
 
-- You can go to your profile and see in the center all your "talks." You can delete them. At the right column, you will see your stats, as well as who is following you.
+- You can go to your profile and see in the center all your "talks." You can delete them. In the right column, you will see your stats, as well as who is following you.
 
 - You can click on a user’s name to see their profile. You’ll notice that is the same as yours, but you can’t delete the “talks.”
 <br/>
@@ -91,7 +91,7 @@ The project was deployed in Heroku. Feel free to check the live demo.
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/AlejandroNo4/nerdytalks/issues).
 
