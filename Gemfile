@@ -17,7 +17,8 @@ gem 'webpacker', '~> 5.0'
 gem 'image_processing', '1.9.3'
 gem 'mini_magick', '4.9.5'
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+#gem 'image_processing', '~> 1.2'
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rubocop', '>= 1.0', '< 2.0'
 
