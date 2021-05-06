@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: %i[edit update show]
   before_action :correct_user, only: %i[edit update]
 
-  def show; end
+  def show
+    @followers = User.all.includes(:followeds).where(followeds: { follower_id: @user.id })
+    @followeds = User.all.includes(:followers).where(followers: { followed_id: @user.id })
+    @talks = Talk.all.where(author_id: @user.id)
+  end
 
   def new
     @user = User.new

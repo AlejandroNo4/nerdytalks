@@ -18,7 +18,7 @@
       <div class="border-top mt-3 mb-3">
       </div>
 
-      <% @user.talks.each do |talk| %>
+      <% @talks.each do |talk| %>
         <div class="d-flex mt-1 mb-1 pb-1 border-bottom">
           <div>
             <img src="<%=(url_for(@user.photo))%>", class="border size-img-info">
@@ -30,7 +30,6 @@
           </div>
         </div>
       <% end %>
-
     </div>
   </div>
 
@@ -52,7 +51,7 @@
     <div class="d-flex border-top border-bottom justify-content-around">
       <div class="d-flex flex-column align-items-center">
         <span>
-          <%= @user.talks.count %>
+          <%= @talks.count %>
         </span>
         <span class="gray-text-userpage">
           Talks
@@ -60,7 +59,7 @@
       </div>
       <div class="d-flex flex-column align-items-center">
         <span>
-          <%= @user.followers.count %>
+          <%= @followers.count %>
         </span>
         <span class="gray-text-userpage">
           Followers
@@ -68,7 +67,7 @@
       </div>
       <div class="d-flex flex-column align-items-center">
         <span>
-          <%= @user.followeds.count %>
+          <%= @followeds.count %>
         </span>
         <span class="gray-text-userpage">
           Following

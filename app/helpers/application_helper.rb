@@ -24,10 +24,6 @@ module ApplicationHelper
     end
   end
 
-  def find_user(u_id)
-    @usr = User.find_by(id: u_id)
-  end
-
   def who_to_follow_list
     if current_user
       User.all.select { |u| u != current_user && !current_user.followed?(u) }.compact

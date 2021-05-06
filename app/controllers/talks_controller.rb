@@ -3,9 +3,8 @@ class TalksController < ApplicationController
   before_action :logged_in_user, only: [:create]
 
   def index
-    @talks = Talk.all
+    @talks = User.all.includes(:talks).map(&:talks).flatten
     @talk = Talk.new
-    @users = User.all
   end
 
   def create
