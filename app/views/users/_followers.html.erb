@@ -1,14 +1,14 @@
-<% @user.followers_id.each do |f_id| %>
+<% @followers.each do |usr| %>
   <div class="d-flex pt-2 pb-2 border-bottom">
     <div>
-      <img src="<%=(url_for(find_user(f_id).photo))%>", class="rounded-circle border mini-img-right-bio">
+      <img src="<%=(url_for(usr.photo))%>", class="rounded-circle border mini-img-right-bio">
     </div>
     <div class="d-flex flex-column ms-2">
       <span>
-        <%= link_to find_user(f_id).full_name, user_path(find_user(f_id).id), class: "author-name" %>
+        <%= link_to usr.full_name, user_path(usr.id), class: "author-name" %>
       </span>
       <span class="gray-text-userpage">
-        @<%= find_user(f_id).username  %>
+        @<%= usr.username  %>
       </span>
     </div>
   </div> 

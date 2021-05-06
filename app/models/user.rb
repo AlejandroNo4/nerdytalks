@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  has_many :talks, foreign_key: 'author_id', dependent: :destroy
   default_scope -> { order(created_at: :desc) }
+
+  has_many :talks, foreign_key: 'author_id', dependent: :destroy
   has_many :followers, foreign_key: 'follower_id', class_name: 'Following', dependent: :destroy
   has_many :followeds, foreign_key: 'followed_id', class_name: 'Following', dependent: :destroy
 
@@ -14,10 +15,6 @@ class User < ApplicationRecord
 
   def followeds_id
     followeds.map(&:follower_id).compact
-  end
-
-  def followers_id
-    followers.map(&:followed_id).compact
   end
 
   def followed?(user)
