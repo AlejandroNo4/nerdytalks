@@ -6,6 +6,8 @@ I made this project for learning proposes, to implement all the learned skills d
 
 Instead of Twitter, I called it “Nerdy Talks”. Space where everybody can share ideas, or in this case “talks” about what we all love. Nerdy stuff.
 
+A user can create an account, add a user photo and a background photo for their profile. The account can be edited or deleted. One user can follow another user. Likewise, a user can create a comment within the main talk.
+
 Go ahead. Try it by yourself!
 <br/>
 
