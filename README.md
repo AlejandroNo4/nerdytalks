@@ -15,6 +15,9 @@ Go ahead. Try it by yourself!
 - Ruby on Rails v6.1.3
 <br/>
 
+<p align="center" >
+    <img alt="screenshot" width="800px" src="./screenshot.png" />
+</p>
 ## Live Demo
 
 [Live Demo](https://nerdytalks.herokuapp.com/)
